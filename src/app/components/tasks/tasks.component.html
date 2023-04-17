@@ -5,7 +5,7 @@
           <div class="Task__Container__Header">
             <h2>{{column.name}}</h2>
             <div class="d-flex ">
-                <select matTooltip="Filter Tasks" (change)="onTaskListFilter(column,$event)" style="width: 50px;height: 24px;border-radius: 10px;margin-right: 3px" >
+                <select class="Task__Container__Header__FilterTaskSelect" matTooltip="Filter Tasks" (change)="onTaskListFilter(column,$event)"  >
                   <option value="all">All</option>
                   <option value="completed">completed</option>
                   <option value="notCpmpleted">notCpmpleted</option>

@@ -6,9 +6,7 @@ Mohammadreza Nozari (Email: mohammadreza.nozari@yahoo.com)
 
 ## 🚀 About Me
 
-8+ years of experience in a wide range of web back-end and front-end projects from legacy
-monolithic applications with zero tests to fully tested modern microservices. worked in different
-workplaces, from a company of three to large organizations with cross-functional teams.
+With +8 years of experience as a software engineer and front-end developer, I possess strong skills in React, Angular, and AngularJS frameworks. I am well-versed in the entire SDLC, including business interaction, requirement analysis, software architecture, design, development, testing, and documentation. My proficiency in project management and ability to provide insightful solutions make me a valuable addition to any team seeking a skilled front-end developer familiar with the importance of the SDLC.
 
 ## Description
 - Add new tasks with a title and description. 
