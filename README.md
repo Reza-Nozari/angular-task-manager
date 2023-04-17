@@ -17,4 +17,11 @@ workplaces, from a company of three to large organizations with cross-functional
 - Filter tasks by completion status (completed or not completed). 
 # Angular Task Manager
 
+![Logo](https://raw.githubusercontent.com/devnozari/angular-task-manager/main/Images/1.PNG)
+![Logo](https://raw.githubusercontent.com/devnozari/angular-task-manager/main/Images/2.PNG)
+![Logo](https://raw.githubusercontent.com/devnozari/angular-task-manager/main/Images/3.PNG)
+![Logo](https://raw.githubusercontent.com/devnozari/angular-task-manager/main/Images/4.PNG)
+![Logo](https://raw.githubusercontent.com/devnozari/angular-task-manager/main/Images/5.PNG)
+
+
 
