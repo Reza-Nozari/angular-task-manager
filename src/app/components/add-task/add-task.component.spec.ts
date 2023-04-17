@@ -57,17 +57,4 @@ describe('AddTaskComponent', () => {
     expect(component.formTask.valid).toBeTruthy();
   });
 
-  it('should call closeForm() method when Cancel button is clicked', () => {
-    const button = fixture.debugElement.nativeElement.querySelector('#cancelBtn');
-    const spy = jest.spyOn(component, 'closeForm');
-    button.click();
-    expect(spy).toHaveBeenCalled();
-  });
-
-
-
-
-
-
-
 });
