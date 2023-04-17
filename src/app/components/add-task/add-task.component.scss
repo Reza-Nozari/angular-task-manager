@@ -1,0 +1,13 @@
+.Task__CreateForm {
+  width: 500px;
+  &__Body{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 650px) {
+    width: 100%;
+  }
+
+}

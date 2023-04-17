@@ -1,0 +1,21 @@
+<div class="Task__CreateForm">
+  <h1 mat-dialog-title>Create Task</h1>
+  <div mat-dialog-content>
+    <form [formGroup]="formTask" class=" Task__CreateForm__Body">
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+    </form>
+
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="closeForm()" >No Thanks</button>
+    <button mat-button (click)="submitForm()" [disabled]="formTask.invalid" >Ok</button>
+  </div>
+</div>
+

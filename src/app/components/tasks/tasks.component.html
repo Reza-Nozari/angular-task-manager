@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="Task">
+      <div cdkDropListGroup>
+        <div class="Task__Container" *ngFor="let column of taskColumns">
+          <div class="Task__Container__Header">
+            <h2>{{column.name}}</h2>
+            <div class="d-flex ">
+                <select matTooltip="Filter Tasks" (change)="onTaskListFilter(column,$event)" style="width: 50px;height: 24px;border-radius: 10px;margin-right: 3px" >
+                  <option value="all">All</option>
+                  <option value="completed">completed</option>
+                  <option value="notCpmpleted">notCpmpleted</option>
+                </select>
+              <mat-icon (click)="onCreateTask(column.name)" matTooltip="Create Task" >add_task</mat-icon>
+            </div>
+          </div>
+          <div
+            class="Task__Container__Body"
+            cdkDropList
+            [cdkDropListData]="column.list"
+            (cdkDropListDropped)="onDrop($event)">
+            <div   *ngFor="let item of column.list " cdkDrag>
+              <div *ngIf="column.status == null || column.status == item.isCompleted" class="Task__Container__Body__Box" >
+                <div class="Task__Container__Body__Box__Header" >
+                  <div class="Task__Container__Body__Box__Header__Title" [matTooltip]="item.title" >{{(item.title && item.title.length>24)?item.title.slice(0,24)+"...":item.title}}</div>
+                  <mat-slide-toggle (change)="onChangeTaskItemCheck(item,$event)" [checked]="item.isCompleted" matTooltip="is Completed!" ></mat-slide-toggle>
+                </div>
+                <div class="Task__Container__Body__Box__Header__Description "  *ngIf="item.description">
+                  <p>{{item.description}} </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
