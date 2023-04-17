@@ -1,31 +1,33 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddTaskComponent } from './add-task.component';
-import {MatDialog, MatDialogModule, MatDialogRef} from "@angular/material/dialog";
 import {AppModule} from "../../app.module";
-import {InjectionToken} from "@angular/core";
-import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 
 describe('AddTaskComponent', () => {
   let component: AddTaskComponent;
   let fixture: ComponentFixture<AddTaskComponent>;
+  let dialogRefSpy: jest.Mocked<MatDialogRef<AddTaskComponent>>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddTaskComponent ],
-      imports: [MatDialogModule],
+      imports: [FormsModule, ReactiveFormsModule,AppModule],
+      declarations: [AddTaskComponent],
       providers: [
+        FormBuilder,
         {
           provide: MatDialogRef,
-          useValue: {}
+          useValue: dialogRefSpy
         },
         {
           provide: MAT_DIALOG_DATA,
-          useValue: {}
-        }]
-    })
-    .compileComponents();
+          useValue: 'Test Data'
+        }
+      ]
+    }).compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(AddTaskComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -34,4 +36,38 @@ describe('AddTaskComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create a form group', () => {
+    expect(component.formTask).toBeTruthy();
+  });
+
+  it('should have a valid form when title and description are filled', () => {
+    component.formTask.setValue({title: 'Test Title', description: 'Test Description'});
+    expect(component.formTask.valid).toBeTruthy();
+  });
+
+
+  it('should have an invalid form when title is not filled', () => {
+    component.formTask.setValue({title: '', description: 'Test Description'});
+    expect(component.formTask.valid).toBeFalsy();
+  });
+
+  it('should have a valid form when description is not filled', () => {
+    component.formTask.setValue({title: 'Test Title', description: ''});
+    expect(component.formTask.valid).toBeTruthy();
+  });
+
+  it('should call closeForm() method when Cancel button is clicked', () => {
+    const button = fixture.debugElement.nativeElement.querySelector('#cancelBtn');
+    const spy = jest.spyOn(component, 'closeForm');
+    button.click();
+    expect(spy).toHaveBeenCalled();
+  });
+
+
+
+
+
+
+
 });

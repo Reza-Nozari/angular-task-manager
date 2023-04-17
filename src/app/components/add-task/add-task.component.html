@@ -14,8 +14,8 @@
 
   </div>
   <div mat-dialog-actions>
-    <button mat-button (click)="closeForm()" >No Thanks</button>
-    <button mat-button (click)="submitForm()" [disabled]="formTask.invalid" >Ok</button>
+    <button mat-button (click)="closeForm()" id="cancelBtn" >No Thanks</button>
+    <button mat-button (click)="submitForm()" id="saveBtn" [disabled]="formTask.invalid" >Ok</button>
   </div>
 </div>
 
