@@ -20,6 +20,8 @@ With +8 years of experience as a software engineer and front-end developer, I po
 ![Logo](https://raw.githubusercontent.com/devnozari/angular-task-manager/main/Images/3.PNG)
 ![Logo](https://raw.githubusercontent.com/devnozari/angular-task-manager/main/Images/4.PNG)
 ![Logo](https://raw.githubusercontent.com/devnozari/angular-task-manager/main/Images/5.PNG)
+### Jest Test
+![Logo](https://raw.githubusercontent.com/devnozari/angular-task-manager/main/Images/6.PNG)
 
 
 
